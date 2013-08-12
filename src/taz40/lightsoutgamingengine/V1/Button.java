@@ -70,6 +70,7 @@ public class Button extends Entity {
 		g.setColor(Color.black);
 		g.scale(txtScale, txtScale);
 		g.drawString(title, strX, strY);
+		System.out.println("drawn");
 	}
 
 	@Override
