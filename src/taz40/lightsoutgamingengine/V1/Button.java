@@ -89,7 +89,7 @@ public class Button extends Entity {
 					
 					System.out.println(title+" in Y");
 					screen.getScreenFactory().getGame().getMousePadListener().clickDone();
-					func.Do(this);
+					new Thread(func, title+" Thread").start();
 				}
 			}
 		}
@@ -107,6 +107,12 @@ public class Button extends Entity {
 		}else{
 			this.hover = false;
 		}
+		
+	}
+
+	@Override
+	public void onCustomDestroy() {
+		// TODO Auto-generated method stub
 		
 	}
 

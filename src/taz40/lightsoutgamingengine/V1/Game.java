@@ -99,7 +99,7 @@ public class Game {
 		window.addMouseListener(mousepadlistener);
 		window.addMouseMotionListener(mousepadlistener);
 		
-		t = new Thread(gamethread);
+		t = new Thread(gamethread, "Game Tread");
 		t.start();
 	}
 	
@@ -121,6 +121,7 @@ public class Game {
 	
 	public void Exit(){
 		System.out.println("Exit initiated");
+		screenfactory.onDestroy();
 		gamethread.exit();
 		try {
 			t.join();

@@ -35,21 +35,21 @@ public class GameThread extends JPanel implements Runnable {
 		
 			try{
 			while(running){
-				//msin1frame = 1000/game.fps;
+				msin1frame = 1000/game.fps;
 				if(game.getScreenFactory().getCurrentScreen()!= null){
-					//long curms = System.currentTimeMillis();
+					long curms = System.currentTimeMillis();
 					game.getScreenFactory().getCurrentScreen().onUpdate();
-					//if(!skipdrawnextframe){
+					if(!skipdrawnextframe){
 						repaint();
-					//}else{
-						//skipdrawnextframe = false;
-					//}
-					//long timeelapsed = System.currentTimeMillis() - curms;
-					//if(timeelapsed > msin1frame){
-					//	skipdrawnextframe = true;
-					//}else if(timeelapsed < msin1frame){
-					//	Thread.sleep((long) (msin1frame-timeelapsed));
-					//}
+					}else{
+						skipdrawnextframe = false;
+					}
+					long timeelapsed = System.currentTimeMillis() - curms;
+					if(timeelapsed > msin1frame){
+						skipdrawnextframe = true;
+					}else if(timeelapsed < msin1frame){
+						Thread.sleep((long) (msin1frame-timeelapsed));
+					}
 				}
 			}
 			}catch(Exception e){

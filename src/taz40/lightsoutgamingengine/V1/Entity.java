@@ -21,6 +21,15 @@ public ArrayList<Entity> entities = new ArrayList<Entity>();
 	
 	public abstract void onCustomDraw(Graphics2D g2d);
 	
+	public abstract void onCustomDestroy();
+	
+	public void onDestroy(){
+		this.onCustomDestroy();
+		for(int i=0; i<entities.size(); i++){
+			entities.get(i).onUpdate();
+		}
+	}
+	
 	public void onCreate(){
 		this.onCustomCreate();
 	}

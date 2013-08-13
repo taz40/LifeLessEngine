@@ -22,4 +22,8 @@ public class ScreenFactory {
 		return game;
 	}
 	
+	public void onDestroy(){
+		screen.onDestroy();
+	}
+	
 }
