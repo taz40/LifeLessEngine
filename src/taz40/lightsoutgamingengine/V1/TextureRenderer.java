@@ -65,6 +65,14 @@ return null;
 		return images.indexOf(bi);
 	}
 	
+	public int LoadTexture(String path){
+		ImageIcon i = new ImageIcon(path, "texture");;
+		BufferedImage bi = new BufferedImage(i.getIconWidth(), i.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+		bi.getGraphics().drawImage(i.getImage(), 0, 0, bi.getWidth(), bi.getHeight(), 0, 0, bi.getWidth(), bi.getHeight(), null);
+		images.add(bi);
+		return images.indexOf(bi);
+	}
+	
 	public  int LoadSpritesheet(String path, Class c){
 		ImageIcon i = createImageIcon(path, "textures", c);
 		BufferedImage bi = new BufferedImage(i.getIconWidth(), i.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
