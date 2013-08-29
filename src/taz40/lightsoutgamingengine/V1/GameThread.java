@@ -48,7 +48,7 @@ public class GameThread extends JPanel implements Runnable {
 					if(timeelapsed > msin1frame){
 						skipdrawnextframe = true;
 					}else if(timeelapsed < msin1frame){
-						Thread.sleep((long) (msin1frame-timeelapsed));
+						Thread.sleep(msin1frame-timeelapsed);
 					}
 				}
 			}
@@ -57,6 +57,7 @@ public class GameThread extends JPanel implements Runnable {
 			}
 	}
 	
+	@Override
 	public void paint(Graphics g){
 		super.paint(g);
 		Graphics2D g2d = (Graphics2D)g;

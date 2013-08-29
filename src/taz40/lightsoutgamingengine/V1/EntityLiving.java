@@ -1,7 +1,5 @@
 package taz40.lightsoutgamingengine.V1;
 
-import java.awt.Graphics2D;
-
 public abstract class EntityLiving extends Entity {
 
 	public EntityLiving(Screen screen, float x, float y, int width, int height, double rotation) {

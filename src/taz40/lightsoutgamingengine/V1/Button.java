@@ -5,8 +5,6 @@ import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
-
 import taz40.lightsoutgamingengine.V1.Entity;
 import taz40.lightsoutgamingengine.V1.Screen;
 import taz40.lightsoutgamingengine.V1.TextureRenderer;
@@ -47,7 +45,6 @@ public class Button extends Entity {
 	@Override
 	public void onCustomCreate() {
 		// TODO Auto-generated method stub
-		System.out.println(title+" has been created!");
 	}
 
 	@Override
@@ -70,24 +67,19 @@ public class Button extends Entity {
 		g.setColor(Color.black);
 		g.scale(txtScale, txtScale);
 		g.drawString(title, strX, strY);
-		System.out.println("drawn");
 	}
 
 	@Override
 	public void onCustomUpdate() {
 		// TODO Auto-generated method stub
 		if(screen.getScreenFactory().getGame().getMousePadListener().isMousePressed()){
-			System.out.println(title+" Mouse Pressed");
 			Point mouse = new Point();
 			int y = screen.getScreenFactory().getGame().getMousePadListener().getY();
 			if(!screen.getScreenFactory().getGame().fullscreen){
 				y -= 25;
 			}
 			if(screen.getScreenFactory().getGame().getMousePadListener().getX() > X && screen.getScreenFactory().getGame().getMousePadListener().getX() < (X + WIDTH)-1){
-				System.out.println(title+" in X");
 				if(y > Y && y < (Y + HEIGHT)){
-					
-					System.out.println(title+" in Y");
 					screen.getScreenFactory().getGame().getMousePadListener().clickDone();
 					new Thread(func, title+" Thread").start();
 				}

@@ -3,8 +3,6 @@ package taz40.lightsoutgamingengine.V1;
 import java.awt.DisplayMode;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
-import java.awt.Window;
-
 import javax.swing.JFrame;
 
 public class Game {
