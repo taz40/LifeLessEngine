@@ -90,7 +90,6 @@ public class Button extends Entity {
 			y -= 25;
 		}
 		if(screen.getScreenFactory().getGame().getMousePadListener().getX() > X && screen.getScreenFactory().getGame().getMousePadListener().getX() < (X + WIDTH)-1){
-			System.out.println(title+" in X");
 			if(y > Y && y < (Y + HEIGHT)){
 				this.hover = true;
 			}else{
