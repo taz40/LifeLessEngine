@@ -30,7 +30,7 @@ public class TextureRenderer {
 		AffineTransform tx = AffineTransform.getRotateInstance(rotationRequired, locationX, locationY);
 		AffineTransformOp op = new AffineTransformOp(tx, AffineTransformOp.TYPE_BILINEAR);
 		//Drawing the rotated image at the required drawing locations
-		g2d.drawImage(op.filter(image, null), x, y, x+(image.getWidth()*scale), y+(image.getHeight()*scale), 0, 0, image.getWidth(), image.getHeight(), null);
+		g2d.drawImage(op.filter(image, null), (x/scale), (y/scale), (x/scale)+(image.getWidth()*scale), (y/scale)+(image.getHeight()*scale), 0, 0, image.getWidth(), image.getHeight(), null);
 		g2d.dispose();
 	}
 	
