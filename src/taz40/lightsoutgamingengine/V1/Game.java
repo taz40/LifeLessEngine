@@ -12,7 +12,7 @@ public class Game {
 	public final GameThread gamethread;
 	private final KeyboardListener keyboardlistener;
 	private final MousePadListener mousepadlistener;
-	private Thread t;
+	public Thread t;
 	private final int windowX;
 	private final int windowY;
 	private final String windowTitle;
